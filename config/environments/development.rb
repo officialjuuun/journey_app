@@ -30,6 +30,11 @@ Rails.application.configure do
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
+  
+  host = '48622645d62c4146a85159dcc0929025.vfs.cloud9.ap-northeast-1.amazonaws.com'
+  # ここをコピペすると失敗します。自分の環境のホストに変えてください。
+  # クラウドIDEの場合は以下をお使いください
+  config.action_mailer.default_url_options = { host: host, protocol: 'https' }
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
