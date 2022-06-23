@@ -78,3 +78,9 @@ class User < ApplicationRecord
   
 end
 
+#undefined method `activated?' for #<User id: 1, name: "Example User",
+#email: "example@railstutorial.org", created_at: "2022-06-20 03:16:40", 
+#updated_at: "2022-06-20 03:16:40", password_digest: [FILTERED], remember_digest: nil, admin: true>
+
+
+#INFO -- : [b4270c93-36ff-4d4b-b25a-f5585380e82f] Completed 500 Internal Server Error in 337ms (ActiveRecord: 37.7ms | Allocations: 6379)
