@@ -51,15 +51,15 @@ class User < ApplicationRecord
   end
   
   # アカウントを有効にする
-  #def activate
-  #  self.update_attribute(:activated,    true)
-  #  self.update_attribute(:activated_at, Time.zone.now)
-  #end
+  def activate
+    self.update_attribute(:activated,    true)
+    self.update_attribute(:activated_at, Time.zone.now)
+  end
 
   # 有効化用のメールを送信する
-  #def send_activation_email
-  #  UserMailer.account_activation(self).deliver_now
-  #end
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
+  end
   
   # パスワード再設定の属性を設定する
   def create_reset_digest
