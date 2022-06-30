@@ -126,4 +126,5 @@ Rails.application.configure do
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
   # アップロードされたファイルをAWSに保存する
   config.active_storage.service = :amazon
+  
 end
