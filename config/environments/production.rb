@@ -48,14 +48,14 @@ Rails.application.configure do
   host = 'warm-cove-71637.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
-    :adress         =>'smtp.sendgrid.net',
-    :port           => '587',
+    :port           => ENV['MAILGUN_SMTP_PORT'],
+    :address        => ENV['MAILGUN_SMTP_SERVER'],
+    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+    :domain         => host,
     :authentication => :plain,
-    :user_name      => ENV['SENDGRID_USERNAME'],
-    :password       => ENV['SENDGRID_PASSWORD'],
-    :domain         => 'heroku.com',
-    :enble_starttls_auto =>true
   }
+  
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   
