@@ -54,3 +54,39 @@ margin-top:20px;
   color: white;
   font-size: 22px;
 }
+
+/* about */
+.about-us{
+    color:orange;
+    h1{
+      margin-bottom:60px;
+    }
+    h3{
+      margin-bottom:30px;
+    }
+    p{
+      font-family:serif;
+    }
+}
+.btn-gradation {
+  margin:50px 0;
+  display: inline-block;
+  width: 180px;
+  text-align: center;
+  font-size: 16px;
+  color: #FFF;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 4px;
+  background-image: linear-gradient(-90deg, #FF006E, #FFD500);
+  transition: .5s;
+  background-size: 200%;
+  &:visited { color:white; text-decoration:none; }
+}
+
+.btn-gradation:hover {
+  background-position: right center;
+  text-decoration:none;
+  color:white;
+}
