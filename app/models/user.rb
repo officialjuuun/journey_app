@@ -8,9 +8,8 @@ class User < ApplicationRecord
                                    dependent:   :destroy
   has_many :following, through: :active_relationships,  source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
-  attr_accessor :remember_token, :activation_token, :reset_token
+  attr_accessor :remember_token, :reset_token
   before_save   :downcase_email
-  before_create :create_activation_digest
   validates :name,  presence: true, length: { maximum: 50 }
   
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -41,33 +40,12 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, User.digest(remember_token))
   end
   
-  # 渡されたトークンがダイジェストと一致したらtrueを返す
-  # def authenticated?(remember_token)
-  #   return false if remember_digest.nil?
-  #   BCrypt::Password.new(remember_digest).is_password?(remember_token)
-  # end
-  # トークンがダイジェストと一致したらtrueを返す
-  def authenticated?(attribute, token)
-    digest = send("#{attribute}_digest")
-    return false if digest.nil?
-    BCrypt::Password.new(digest).is_password?(token)
-  end
+  
   
   
   # ユーザーのログイン情報を破棄する
   def forget
     self.update_attribute(:remember_digest, nil)
-  end
-  
-  # アカウントを有効にする
-  def activate
-    self.update_attribute(:activated,    true)
-    self.update_attribute(:activated_at, Time.zone.now)
-  end
-
-  # 有効化用のメールを送信する
-  def send_activation_email
-    UserMailer.account_activation(self).deliver_now
   end
   
   # パスワード再設定の属性を設定する
