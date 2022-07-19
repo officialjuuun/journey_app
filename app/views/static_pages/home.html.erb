@@ -21,15 +21,18 @@
     <div class="container">
       <h1>Welcome to the Journey!</h1>
       <p>
-        Journey(ジャーニー)は日本の観光地の口コミサイトです!
+        Journey(ジャーニー)は挑戦する人々の発信プラットフォームです。
       <p>
       <p>
-        あなたの一番行きたいところへ
+        我々が世界を変える。志高く。
       </p>
-      <%= link_to "新規登録", signup_path, class: "btn signup" %>
+      <p>
+        共に挑戦していこう。
+      </p>
+      <%= link_to "新規登録  & Challengerになる", signup_path, class: "btn signup" %>
       <div class="jjj">
-        <%= link_to "観光地を探す", signup_path, class: "btn gion" %>
-        <%= link_to "口コミ", signup_path, class: "btn evaluation" %>
+        <%= link_to "ピックアップ記事", signup_path, class: "btn gion" %>
+        <%= link_to "公開中の最新記事", "/index" , class: "btn evaluation" %>
       </div>
     </div>
   </div>
