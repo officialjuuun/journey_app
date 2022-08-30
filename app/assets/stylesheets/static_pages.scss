@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .center-jumbotron {
   padding: 180px 0 100px 0;
-  background-image: image-url('23652330_l.jpg');
+  background-image: image-url('ggg.jpg');
   background-size: cover;
   color: white;
   text-align: center;
@@ -35,7 +35,7 @@
 .container {
   max-width: 1170px;
   width: 100%;
-  padding: 0 15px;
+  padding: 0px 15px;
   margin: 0 auto;
 }
 
@@ -89,4 +89,24 @@ margin-top:20px;
   background-position: right center;
   text-decoration:none;
   color:white;
+}
+
+.center-2 {
+  padding: 180px 0px 100px 0;
+  background-image: image-url('eee.jpg');
+  background-size: cover;
+  color: white;
+  text-align: center;
+  background-color:rgba(255,255,255,0.1);
+  background-blend-mode:lighten;
+}
+
+.center-3 {
+  padding: 180px 0px 100px 0;
+  background-image: image-url('ddd.jpg');
+  background-size: cover;
+  color: white;
+  text-align: center;
+  background-color:rgba(255,255,255,0.1);
+  background-blend-mode:lighten;
 }
